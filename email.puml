@@ -1,0 +1,19 @@
+@startuml
+
+class Email {
++ _construct(string $email): void
++ fromString(string $email): self
++ __toString(): string
++ ensureIsValidEmail(string $email): void
+}
+
+TestCase <|-- EmailTest
+
+class EmailTest {
++ testCanBeCreatedFromValidEmailAddress(): void
++ testCannotBeCreatedFromInvalidEmailAddress(): void
++ testCanBeUsedAsString(): void
+}
+
+
+@enduml
